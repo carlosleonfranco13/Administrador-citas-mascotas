@@ -20,7 +20,7 @@ class Citas {
     }
 
     eliminarCita(id) {
-        this.citas = this.citas.filter( cita => cita.id !== id )
+        this.citas = this.citas.filter( cita => cita.id !== id );
     }
 }
 
@@ -35,7 +35,7 @@ class UI {
         if( tipo === 'error' ) {
             divMensaje.classList.add('alert-danger');
         } else {
-            divMensaje.classList.add('success');
+            divMensaje.classList.add('alert-success');
         }
 
         // Mensaje de error
@@ -45,7 +45,7 @@ class UI {
         document.querySelector('#contenido').insertBefore(divMensaje, document.querySelector('.agregar-cita'));
 
         // Quitar la alerta después de 5 segundos
-        setTimeout(() => {
+        setTimeout( () => {
             divMensaje.remove();
         }, 5000);
     }
@@ -195,7 +195,7 @@ function eliminarCita(id) {
     // Eliminar la cita
     administrarCitas.eliminarCita(id);
 
-    // Muestre un msj
+    // Muestre un mensaje
     ui.imprimirAlerta('La cita se eliminó correctamente');
 
     // Refrescar las citas
